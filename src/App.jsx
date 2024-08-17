@@ -89,6 +89,18 @@ function App() {
               {/* <td>{coin.id}</td> */}
               <td>{coin.symbol.toUpperCase()}</td>
               <td>${coin.current_price}</td>
+              <td>
+                <span
+                  style={{
+                    color:
+                      coin.market_cap_change_percentage_24h < 0
+                        ? "red"
+                        : "green",
+                  }}
+                >
+                  {coin.market_cap_change_percentage_24h.toFixed(2)}%
+                </span>
+              </td>
               <td>Mkt Cap : ${coin.market_cap}</td>
             </tr>
           ))}
